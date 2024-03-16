@@ -5,6 +5,10 @@ const http = require('http');
 
 
 
+
+
+
+
 const token = '7156714710:AAEBG2fBbZ490ug6J1ho4G-oCG5plid2IAQ';
 const bot = new TelegramBot(token, { polling: true });
 
@@ -24,33 +28,17 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on('callback_query', (query) => {
   if (query.data === 'check') {
-    bot.sendMessage(query.message.chat.id, 'Veuillez envoyer votre numéro', {
-      reply_markup: {
-        force_reply: true
-      }
-    });
-
-    bot.onReplyToMessage = (msg) => {
-      const number = msg.text;
-      const isValidNumber = /^\d+$/.test(number);
-
-      if (isValidNumber) {
-        bot.sendMessage(msg.chat.id, 'Numéro accepté. Cliquez le bouton ci-dessous pour commencer à gagner.', {
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: 'Démarrer', url: 'http://t.me/Bombucksbot_bombot/Solkah_Bombucksbot' }]
-            ]
-          }
-        });
-      } else {
-        bot.sendMessage(msg.chat.id, 'Numéro invalide. Veuillez entrer un numéro valide.');
-      }
+    const keyboard = {
+      inline_keyboard: [
+        [{ text: 'Démarrer le bot', url: 'http://t.me/Bombucksbot_bombot/Solkah_Bombucksbot' }]
+      ]
     };
+
+    bot.sendMessage(query.message.chat.id, 'Cliquez sur le bouton ci-dessous pour commencer à gagner.', {
+      reply_markup: keyboard
+    });
   }
 });
-
-
-
 
 
 
