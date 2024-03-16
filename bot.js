@@ -35,14 +35,12 @@ bot.on('callback_query', (query) => {
       const isValidNumber = /^\d+$/.test(number);
 
       if (isValidNumber) {
-        const keyboard = {
-          inline_keyboard: [
-            [{ text: 'Démarrer', url: 'http://t.me/Bombucksbot_bombot/Solkah_Bombucksbot' }]
-          ]
-        };
-
         bot.sendMessage(msg.chat.id, 'Numéro accepté. Cliquez le bouton ci-dessous pour commencer à gagner.', {
-          reply_markup: keyboard
+          reply_markup: {
+            inline_keyboard: [
+              [{ text: 'Démarrer', url: 'http://t.me/Bombucksbot_bombot/Solkah_Bombucksbot' }]
+            ]
+          }
         });
       } else {
         bot.sendMessage(msg.chat.id, 'Numéro invalide. Veuillez entrer un numéro valide.');
@@ -50,6 +48,11 @@ bot.on('callback_query', (query) => {
     };
   }
 });
+
+
+
+
+
 
 
 // Créez un serveur HTTP simple qui renvoie "I'm alive" lorsque vous accédez à son URL
