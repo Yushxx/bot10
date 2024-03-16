@@ -1,20 +1,14 @@
-
 {
   "name": "bot10",
   "version": "1.0.0",
-  "description": "Description de votre application",
-  "main": "bot.js",
-  
-  "dependencies": {
-    "node-telegram-bot-api": "^0.59.0",
-    "lodash": "^4.17.21",
-    "node-schedule": "^1.3.2"
-  
-
-  },
+  "description": "Exemple de bot Telegram utilisant Axios et HTTP",
+  "main": "bot.js", // Nom du fichier principal de votre application
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js" // Commande pour démarrer votre application
   },
-  "author": "Votre Nom",
-  "license": "MIT"
+  "dependencies": {
+    "node-telegram-bot-api": "^0.53.0", // Version de TelegramBot
+    "axios": "^0.24.0", // Version de Axios
+    "http": "^0.0.1" // Version de HTTP (ceci est un module natif de Node.js)
+  }
 }
