@@ -16,7 +16,7 @@ bot.onText(/\/start/, (msg) => {
   const name = msg.from.first_name;
   const keyboard = {
     inline_keyboard: [
-      [{ text: "S'inscrire", url: 'https://1wyfsk.com/?open=register#ot61' }],
+      [{ text: "S'inscrire", url: 'https://1wnurc.com/?open=register#4vwr' }],
       [{ text: 'Check ✅️', callback_data: 'check' }]
     ]
   };
